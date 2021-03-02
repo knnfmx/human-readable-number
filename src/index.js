@@ -9,17 +9,19 @@ module.exports = function toReadable (number) {
 		return zero;
 	}
     // from 100 to 1000 
+	// from 100 to 1000 
 	if (number > 99) {
-		return units[number / 100 - 1] + " hundred" ;
-	}
-    
-    // from 1 to 19 and for all ty nums
+		return units[Math.floor(number / 100 - 1)] + " hundred" + " " + numsToWords(number - (number / 100));
+	} else return numsToWords(number - (number / 100));
 
-	if (number <= 9) {
-		return units[number - 1];
-	} else if (number <= 19) {
-		return teen[number - 10];
-	} else {
-		return ty[Math.floor(number / 10) - 2] + " " + units[number % 10 - 1];
+	// from 1 to 19 and for all ty nums
+	function numsToWords() {
+		if (number <= 9) {
+			return units[number - 1];
+		} else if (number <= 19) {
+			return teen[number - 10];
+		} else {
+			return ty[Math.floor(number / 10) - 2] + " " + units[number % 10 - 1];
+		}
 	}
 }
