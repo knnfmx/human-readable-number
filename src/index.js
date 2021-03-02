@@ -8,6 +8,10 @@ module.exports = function toReadable (number) {
 	if (number === 0) {
 		return zero;
 	}
+    // from 100 to 1000 
+	if (number > 99) {
+		return units[number / 100 - 1] + " hundred" ;
+	}
     
     // from 1 to 19 and for all ty nums
 
