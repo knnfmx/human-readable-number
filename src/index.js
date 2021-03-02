@@ -11,11 +11,11 @@ module.exports = function toReadable (number) {
     
     // from 1 to 19 and for all ty nums
 
-	if (num <= 9) {
-		return units[num - 1];
-	} else if (num <= 19) {
-		return teen[num - 10];
+	if (number <= 9) {
+		return units[number - 1];
+	} else if (number <= 19) {
+		return teen[number - 10];
 	} else {
-		return ty[Math.floor(num / 10) - 2];
+		return ty[Math.floor(number / 10) - 2] + " " + units[number % 10 - 1];
 	}
 }
