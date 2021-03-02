@@ -8,7 +8,6 @@ module.exports = function toReadable (number) {
 	if (number === 0) {
 		return zero;
 	}
-    // from 100 to 1000 
 	// from 100 to 1000 
 	if (number > 99) {
 		return units[Math.floor(number / 100 - 1)] + " hundred" + " " + numsToWords(number - (number / 100));
