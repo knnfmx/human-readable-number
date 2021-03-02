@@ -20,8 +20,10 @@ module.exports = function toReadable (number) {
 			return units[number - 1];
 		} else if (number <= 19) {
 			return teen[number - 10];
+		} else if (number % 10 == 0) {
+			return  `${ty[Math.floor(number / 10) - 2]}`;
 		} else {
-			return `${ty[Math.floor(number / 10) - 2]} ${units[number % 10 - 1]}`;
+			return `${ty[Math.floor(number / 10) - 2]} ${units[number % 10 - 1]}`
 		}
 	}
 }
