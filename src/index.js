@@ -10,8 +10,8 @@ module.exports = function toReadable (number) {
 	}
 	// from 100 to 1000 
 	if (number > 99) {
-		return units[Math.floor(number / 100 - 1)] + " hundred" + " " + numsToWords(number - (number / 100));
-	} else return numsToWords(number - (number / 100));
+		return units[Math.floor(number / 100 - 1)] + " hundred" + " " + numsToWords(number - (Math.floor(number / 100)) * 100);
+	} else return numsToWords(number - (Math.floor(number / 100)) * 100);
 
 	// from 1 to 19 and for all ty nums
 	function numsToWords() {
