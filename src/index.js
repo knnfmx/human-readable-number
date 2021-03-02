@@ -5,7 +5,7 @@ module.exports = function toReadable (number) {
 	let ty = ["twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
 	
 	// for zero
-	if (num === 0) {
+	if (number === 0) {
 		return zero;
 	}
 }
